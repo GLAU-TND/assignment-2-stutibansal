@@ -6,25 +6,41 @@
  */
 package problem3.main;
 import problem3.myqueue.MyPriorityQueue;
-import problem3.student.Student;
-
+import problem5.student.Student;
+import problem3.nide.Node;
 
 // executable class
 // use problem5.student.Student class to create object of student
 public class MyMain{
 public static void main(String[] args) {
-        MyPriorityQueue queue = new MyPriorityQueue();
-        queue.enqueue(new Student("Tushar",58));
-        queue.enqueue(new Student("Tanishq",23));
-        queue.enqueue(new Student("Pavit",65));
-        queue.enqueue(new Student("Samar",1));
-        queue.enqueue(new Student("Vibhu",10));
-        queue.enqueue(new Student("Shantanu",76));
+        Scanner scan = new Scanner(System.in);
+        MyPriorityQueue priorityQueue = new MyPriorityQueue();
+        System.out.println("Enter number of nodes ");/*--->*/
+        int nodes = scan.nextInt();
+        while (nodes-- > 0) {
+            Student student = new Student();
+            System.out.println("Enter name ");/*--->*/
+            String name = scan.next().trim();
+            System.out.println("Enter roll number");/*--->*/
+            int roll = scan.nextInt();
+            student.setName(name);
+            student.setRollNumber(roll);
 
-        queue.show();
-        queue.dequeue();
-        queue.show();
+            Node node = new Node();
+            node.setStudent(student);
 
+            priorityQueue.enQueue(node);
+        }
+
+        System.out.println("Displaying Queue");
+
+        Node node = priorityQueue.deQueue();
+        while (node != null) {
+            System.out.println(node);
+            node = priorityQueue.deQueue();
+        }
     }
+}
+
 
 }
