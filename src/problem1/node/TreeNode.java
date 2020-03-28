@@ -8,14 +8,8 @@ package problem1.node;
 
 public class TreeNode {
 private int data;
-    private TreeNode left;
-    private TreeNode right;
-
-    public TreeNode(int data){
-        this.data=data;
-        this.left=null;
-        this.right=null;
-    }
+    private TreeNode leftNode;
+    private TreeNode rightNode;
 
     public int getData() {
         return data;
@@ -25,19 +19,27 @@ private int data;
         this.data = data;
     }
 
-    public TreeNode getLeft() {
-        return left;
+    public TreeNode getLeftNode() {
+        return leftNode;
     }
 
-    public void setLeft(TreeNode left) {
-        this.left = left;
+    public void setLeftNode(TreeNode leftNode) {
+        this.leftNode = leftNode;
     }
 
-    public TreeNode getRight() {
-        return right;
+    public TreeNode getRightNode() {
+        return rightNode;
     }
 
-    public void setRight(TreeNode right) {
-        this.right = right;
+    public void setRightNode(TreeNode rightNode) {
+        this.rightNode = rightNode;
     }
+
+    @Override
+    public String toString() {
+        return "data ==>> " + getData();
+    }
+
 }
+
+
