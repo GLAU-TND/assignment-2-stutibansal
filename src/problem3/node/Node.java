@@ -5,30 +5,32 @@
  *  Time: 7:13 PM
  */
 package problem3.node;
- 
+ import problem5.student.Student;
 
 public class Node {
-private Student data;
-    private Node next;
+private Student student;
+    private Node nextNode;
 
-    public Node(Student data){
-        this.data=data;
-        this.next=null;
+    public Student getStudent() {
+        return student;
     }
 
-    public Student getData() {
-        return data;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
-    public void setData(Student data) {
-        this.data = data;
+    public Node getNextNode() {
+        return nextNode;
     }
 
-    public Node getNext() {
-        return next;
+    public void setNextNode(Node nextNode) {
+        this.nextNode = nextNode;
     }
 
-    public void setNext(Node next) {
-        this.next = next;
+    @Override
+    public String toString() {
+        return "Node " + "\n" +
+                getStudent();
     }
+
 }
